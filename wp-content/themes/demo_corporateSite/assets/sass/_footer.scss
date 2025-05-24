@@ -1,0 +1,116 @@
+@use "_mixin";
+@use "_variable" as g;
+
+// レイアウト
+.ly_footer{
+    width: 100%;
+    padding: 40px 0 16px;
+}
+
+
+// ブロックモジュール
+.bl_footer_inner{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1080px;
+}
+@include mixin.mq("pc"){
+    .bl_footer_inner{
+        width: 80%;
+    }
+}
+// 背景色
+.bl_contBg_primaryLight{
+    background: g.$bg-primary-light;
+}
+// フッターロゴ
+.bl_footer_logo{
+    img{
+        width: 100%;
+    }
+}
+@include mixin.mq("tab"){
+    .bl_footer_logo{
+        width: 60%;
+    }
+}
+@include mixin.mq("pc"){
+    .bl_footer_logo{
+        width: 30%;
+    }
+}
+// テキスト
+.bl_footer_txt{
+    margin-top: 12px;
+    font-size: 12px;
+    width: 70%;
+}
+// SNSロゴ
+.bl_footer_under{
+    margin-top: 16px;
+}
+.bl_footer_logoGroup{
+    display: flex;
+    gap: 8px;
+
+    img{
+        max-width: 32px;
+        transition: all 0.3s;
+    }
+    img:hover{
+        opacity: 0.7;
+    }
+}
+// ナビゲーションメニュー
+.bl_footer_nav{
+    margin-top: 32px;
+}
+.bl_footer_nav_list{
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+    flex-wrap: wrap;
+}
+.bl_footer_nav_listItem{
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+.bl_footer_nav_listItem:hover{
+    opacity: 0.7;
+}
+.bl_footer_nav_list_line{
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    background: g.$border-black;
+    transform: rotate(15deg);
+}
+@include mixin.mq("pc"){
+    .bl_footer_nav{
+        margin-top: 0;
+    }
+}
+// 区切り線
+.bl_footer_line{
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: g.$border-grey;
+    margin-top: 32px;
+}
+// コピーライト
+.bl_footer_copyRight_wrapper{
+    text-align: center;
+    margin-top: 16px;
+    line-height: 100%;
+}
+
+// パソコン表示時フレックス
+@include mixin.mq("pc"){
+    .bl_footer_under{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}

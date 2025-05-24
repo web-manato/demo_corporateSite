@@ -1,0 +1,141 @@
+@use "_mixin";
+@use "_variable" as g;
+
+// レイアウト
+.ly_single_relationTtl{
+    text-align: center;
+}
+.ly_single_banner{
+    display: block;
+}
+
+
+// ブロックモジュール
+// 投稿日
+.bl_post_infoGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bl_post_info_date{
+    font-size: 12px;
+    color: g.$font-color-grey;
+}
+// タイトル
+.bl_post_ttl{
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 160%;
+}
+@include mixin.mq("pc"){
+    .bl_post_ttl{
+        font-size: 26px;
+    }
+}
+// サムネイル
+.bl_post_thumbnailWrapper{
+    margin-top: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    height: 170px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+@include mixin.mq("tab"){
+    .bl_post_thumbnailWrapper{
+        height: 300px;
+    }
+}
+@include mixin.mq('pc'){
+    .bl_post_thumbnailWrapper{
+        height: 500px;
+    }
+}
+
+// ポストブロック
+.bl_post_cont{
+    // 段落
+    p{
+        margin-top: 40px;
+    }
+    p + p,
+    h2 + p,
+    h3 + p{
+        margin-top: 24px;
+    }
+    // 見出し
+    h2{
+        margin-top: 64px;
+        padding: 10px 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: g.$font-color-white;
+        line-height: 160%;
+        background: g.$bg-black;
+        border-radius: 8px;
+    }
+    h3{
+        margin-top: 24px;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 1px solid g.$border-primary;
+        padding-bottom: 6px;
+        line-height: 160%;
+    }
+    h3::before{
+        display: inline-block;
+        content: "";
+        background-image: url(../img/moshashugyou_logo.png);
+        background-size: cover;
+        width: 28px;
+        height: 22.5px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+    @include mixin.mq("pc"){
+        h2{
+            margin-top: 80px;
+        }
+    }
+}
+
+// バナー画像
+.bl_single_bannerWrapper{
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    transition: all 0.3s;
+
+    img{
+        width: 100%;
+    }
+}
+.bl_single_bannerWrapper:hover{
+    opacity: 0.7;
+}
+
+// おすすめ記事
+// 装飾画像
+.bl_single_relationTtl_imgWrapper{
+    width: 34px;
+    margin: 0 auto;
+
+    img{
+        width: 100%;
+    }
+}
+// タイトル
+.bl_single_relationTtl{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 100%;
+    margin-top: 6px;
+}

@@ -1,0 +1,74 @@
+@use "../_mixin";
+@use "../variable" as g;
+
+// ブロックモジュール
+.bl_postGroup{
+    display: grid;
+    gap: 40px;
+}
+@include mixin.mq("tab"){
+    .bl_postGroup{
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px 24px;
+    }
+}
+@include mixin.mq("pc"){
+    .bl_postGroup{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+.bl_post_card{
+    transition: all 0.3s;
+}
+.bl_post_card:hover{
+    .bl_post_card_thumbnailWrapper{
+        img{
+            transform: scale(1.1);
+        }
+    }
+}
+// メタ情報
+.bl_post_card_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    line-height: 100%;
+}
+// カテゴリ
+.bl_post_card_info_date{
+    color: g.$font-color-grey;
+    letter-spacing: 0.02em;
+}
+// サムネイル
+.bl_post_card_thumbnailWrapper{
+    margin-top: 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid g.$border-primary;
+
+    img{
+        width: 100%;
+        transition: all 0.3s;
+    }
+}
+.thumbnail_image {
+    object-fit: cover; /* アスペクト比を保持しつつ、指定サイズに合わせてトリミング */
+}
+// 投稿タイトル
+.bl_post_card{
+    figcaption{
+        margin-top: 8px;
+    }
+}
+.bl_post_card_ttl{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+
+// シングルページレイアウト
+.bl_postGroup__single{
+    margin-top: 40px;
+}

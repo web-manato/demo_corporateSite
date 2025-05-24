@@ -1,0 +1,37 @@
+@use "../_mixin";
+@use "../variable" as g;
+
+// レイアウト
+.ly_pagiNation{
+    margin-top: 40px;
+    text-align: center;
+}
+
+// 基本スタイル
+.page-numbers{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    background: g.$bg-grey;
+}
+@include mixin.mq("pc"){
+    .page-numbers{
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+}
+
+// 現在ページ
+.current{
+    background: g.$bg-black;
+    color: g.$font-color-white;
+}
+
+// ドット部分
+.dots{
+    background: none;
+    line-height: 0;
+}

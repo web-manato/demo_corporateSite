@@ -1,0 +1,14 @@
+.ly_pageKv {
+  padding: 56px 18px;
+}
+
+.bl_pageKv {
+  background-image: url(../img/pageKv_bgImg.png);
+}
+
+.bl_pageKv_ttl {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+}
+/*# sourceMappingURL=archive.css.map */

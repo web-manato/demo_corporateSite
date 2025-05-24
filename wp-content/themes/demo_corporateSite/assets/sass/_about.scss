@@ -1,0 +1,12 @@
+@use "_mixin";
+@use "_variable" as g;
+
+// ブロックモジュール
+// コンテンツ
+.bl_about_cont{
+    margin-top: 24px;
+}
+// テキスト
+.bl_about_cont_txt + .bl_about_cont_txt{
+    margin-top: 24px;
+}

@@ -1,0 +1,9 @@
+@use "_mixin";
+@use "_variable" as g;
+
+
+// ブロックモジュール
+.bl_404_txt{
+    text-align: center;
+    font-weight: 700;
+}

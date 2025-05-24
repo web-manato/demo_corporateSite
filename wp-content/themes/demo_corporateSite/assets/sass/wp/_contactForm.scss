@@ -1,0 +1,39 @@
+@use "../mixin";
+@use "../variable" as g;
+
+// ブロックモジュール
+label{
+    display: block;
+
+    p{
+        font-weight: 700;
+    }
+    input,
+    textarea{
+        border: 1px solid g.$border-grey;
+        width: 100%;
+        padding: 8px;
+    }
+    textarea{
+        height: 200px;
+    }
+}
+label + label{
+    margin-top: 24px;
+}
+@include mixin.mq("pc"){
+    label{
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            width: 30%;
+        }
+    }
+}
+
+.wpcf7-form-control-wrap{
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+}

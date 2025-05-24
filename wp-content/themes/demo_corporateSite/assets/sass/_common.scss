@@ -1,0 +1,244 @@
+@use "_mixin";
+@use "_variable" as g;
+
+// ベーススタイル
+body{
+    font-size: 14px;
+    font-family: g.$font-family-jp;
+    color: g.$font-color-base;
+    line-height: 175%;
+}
+// PC
+@include mixin.mq("pc"){
+    body{
+        font-size: 16px;
+    }
+}
+
+// ブロックモジュール
+// コンテンツ幅
+.bl_cont_inner{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+// PC
+@include mixin.mq("pc"){
+    .bl_cont_inner{
+        width: 80%;
+    }
+    .bl_cont_inner__70{
+        width: 70%;
+    }
+    .bl_cont_inner__60{
+        width: 60%;
+        max-width: 850px;
+    }
+}
+
+// 画像
+.bl_imgWrapper img{
+    width: 100%;
+}
+
+// 改行
+.un_lb{
+    display: none;
+}
+@include mixin.mq("pc"){
+    .un_lb{
+        display: block;
+    }
+}
+
+
+
+// レイアウト
+.ly_cont{
+    padding: 56px 0;
+}
+@include mixin.mq("pc"){
+    .ly_cont{
+        padding: 64px 0;
+    }
+}
+// ボタン
+.ly_btn{
+    margin-top: 24px;
+    text-align: center;
+}
+@include mixin.mq("pc"){
+    .ly_btn{
+        margin-top: 16px;
+        text-align: left;
+    }
+    .ly_btn__contact{
+        text-align: center;
+        margin-top: 24px;
+    }
+}
+// キービジュアル
+.ly_pageKv{
+    padding: 56px 0;
+}
+
+
+// ブロックモジュール
+// CTA
+@include mixin.mq("pc"){
+    .bl_cta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 41px;
+    }
+}
+// 背景画像
+.bl_contBg_cta{
+    background-image: url(../img/sp_cta_bgImg.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+@include mixin.mq("pc"){
+    .bl_contBg_cta{
+        background-image: url(../img/pc_cta_bgImg.png);
+    }
+}
+// パソコン画像
+.bl_cta_imgWrapper{
+
+    img{
+        width: 100%;
+    }
+}
+// ロゴ・隠し見出し
+.bl_cta_ttl_hidden{
+    display: none;
+}
+.bl_cta_ttlLogo{
+    margin-top: 24px;
+
+    img{
+        width: 100%;
+    }
+}
+@include mixin.mq("pc"){
+    .bl_cta_imgWrapper{
+        max-width: 324px;
+    }
+    .bl_cta_ttlLogo{
+        max-width: 415px;
+        margin-top: 0;
+    }
+}
+// テキスト部分
+.bl_cta_txt{
+    font-size: 12px;
+    font-weight: 600;
+    color: g.$font-color-white;
+    text-align: center;
+    margin-top: 12px;
+}
+@include mixin.mq("tab"){
+    .bl_cta_txt{
+        margin-top: 18px;
+        font-size: 14px;
+    }
+}
+@include mixin.mq("pc"){
+    .bl_cta_txt{
+        text-align: left;
+    }
+}
+
+// キービジュアル
+// 背景画像
+.bl_pageKv{
+    background-image: url(../img/pageKv_bgImg.png);
+    border-bottom: 1px solid g.$border-primary;
+}
+// タイトル
+.bl_pageKv_ttl{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+}
+.bl_pageKv_ttl__contact{
+    text-align: center;
+}
+@include mixin.mq("pc"){
+    .bl_pageKv_ttl{
+        font-size: 26px;
+    }
+}
+
+
+// エレメントモジュール
+// ボタン
+.el_btn{
+    display: inline-block;
+    padding: 15.5px 41px;
+    background: g.$bg-black;
+    color: g.$font-color-white;
+    border-radius: 24.5px;
+    font-weight: 600;
+    line-height: 100%;
+    transition: all 0.3s;
+    border: 1px solid g.$border-black;
+}
+.el_btn__white{
+    background: g.$bg-white;
+    color: g.$font-color-base;
+    border: 1px solid g.$border-white;
+}
+.el_btn:hover{
+    background: g.$bg-white;
+    color: g.$font-color-base;
+}
+.el_btn__white:hover{
+    background: g.$bg-black;
+    color: g.$font-color-white;
+}
+
+// カテゴリ
+.el_category{
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 17px;
+    color: g.$font-color-white;
+    font-weight: 600;
+    line-height: 100%;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+.el_category--html-css{
+    background: g.$bg-gold;
+}
+.el_category--javascript{
+    background: g.$bg-green;
+}
+.el_category--web-design{
+    background: g.$bg-orange;
+}
+.el_category--web-create{
+    background: g.$bg-pink;
+}
+.el_category--wordpress{
+    background: g.$bg-blue;
+}
+.el_category:hover{
+    opacity: 0.7;
+}
+
+// セクションタイトル
+.el_secTtl{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 160%;
+}
+@include mixin.mq("pc"){
+    .el_secTtl{
+        font-size: 28px;
+    }
+}
